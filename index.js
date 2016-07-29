@@ -15,12 +15,6 @@ mongodb.MongoClient.connect(process.env.MONGODB_URI, (err, database) => {
     db = database;
     console.log("database connected")
     
-    db.collection('testcollection').insertOne({
-        'user' : "auser",
-        id : "anid",
-        whatever: "whatever"
-    })
-    
     var server = app.listen(process.env.PORT, () => {
         var port = server.address().port
         console.log("listening on", port)
